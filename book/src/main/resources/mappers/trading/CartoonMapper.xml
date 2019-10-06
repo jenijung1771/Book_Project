@@ -7,7 +7,7 @@
 	<insert id="buyWrite">
 		INSERT INTO buy 
 				(buy_writer, buy_category, buy_title, buy_content, buy_reg_date)
-		VALUES (#{buyWriter}, #{buyCategory}, #{buyTitle}, #{buyContent}, NOW());
+		VALUES (#{buy_writer}, #{buy_category}, #{buy_title}, #{buy_content}, NOW());
 	</insert>
 	
 	<resultMap id="BuyMap" type="com.spring.book.buy.domain.Buy">

@@ -35,23 +35,21 @@ public class registController {
 	}
 	
 	//데이터(계정, 이메일) 중복체크 요청
-		@GetMapping("/check")
-		public ResponseEntity<String> check(String info, String kind) {
-			
-//			System.out.println("중복체크 종류: " + kind);
-//			System.out.println("중복체크할 데이터: " + info);
-			
-			try {
-				boolean flag = userService.isDuplicate(kind, info);
-				if(flag) { //데이터가 중복데이터임!
-					return new ResponseEntity<>("true", HttpStatus.OK);
-				} else { //중복데이터가 아님!
-					return new ResponseEntity<>("false", HttpStatus.OK);
-				}
-			} catch(Exception e) {
-				e.printStackTrace();
-				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	@GetMapping("/check")
+	public ResponseEntity<String> check(String info, String kind) {
+		
+		
+		try {
+			boolean flag = userService.isDuplicate(kind, info);
+			if(flag) { //데이터가 중복데이터임!
+				return new ResponseEntity<>("true", HttpStatus.OK);
+			} else { //중복데이터가 아님!
+				return new ResponseEntity<>("false", HttpStatus.OK);
 			}
+		} catch(Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
+	}
 	
 }

@@ -11,7 +11,7 @@ public interface IBuyMapper {
 	// write.jsp
 	void buyWrite(Buy article);
 	
-	// content.jsp
+	/* content.jsp
 	Buy buyContent(Integer buyId);
 	
 	// list.jsp
@@ -25,5 +25,7 @@ public interface IBuyMapper {
 	
 	// delete One reply
 	void delete(Integer buyReplyId);
+	
+	*/
 	
 }
